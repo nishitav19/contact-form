@@ -1,9 +1,10 @@
 import "./App.css";
+import Contact from "./Contact";
 
 function App() {
   return (
-    <div>
-      <h2>Contact Form</h2>
+    <div className="app">
+      <Contact />
     </div>
   );
 }
