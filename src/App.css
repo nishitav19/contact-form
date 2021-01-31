@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
 
 .app {
   /* background-color: rgb(69, 19, 134); */
@@ -35,10 +36,11 @@
   font-size: 14px;
   font-weight: 600;
   padding: 0 100px;
+  font-family: Roboto;
 }
 
 form {
-  height: 300px;
+  height: 285px;
   width: 270px;
   margin: 20px auto;
   padding: 20px 40px;
@@ -67,15 +69,17 @@ form {
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-  font-family: Oswald;
+  font-family: Roboto;
   font-weight: 300;
+  font-size: 12px;
 }
 
 input[type="text"],
 input[type="email"],
 textarea[type="text"] {
-  font-family: Oswald;
+  font-family: Roboto;
   font-weight: 400;
+  border-radius: 20px;
 }
 
 .form input:focus,
@@ -93,4 +97,5 @@ textarea[type="text"] {
   border: 0;
   font-family: Oswald;
   font-weight: 600;
+  border-radius: 20px;
 }
