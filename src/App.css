@@ -1,16 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&display=swap");
 
 .app {
-  background-color: black;
+  /* background-color: rgb(69, 19, 134); */
+  background-image: linear-gradient(rgb(105, 26, 207), rgb(57, 17, 112));
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
+  overflow: hidden;
   background-size: cover;
 }
 
 .contact-form {
   width: 600px;
   margin: auto;
-  border: 1px solid whitesmoke;
 }
 
 .align-header {
@@ -32,5 +33,64 @@
   display: flex;
   justify-content: space-between;
   font-size: 14px;
+  font-weight: 600;
   padding: 0 100px;
+}
+
+form {
+  height: 300px;
+  width: 270px;
+  margin: 20px auto;
+  padding: 20px 40px;
+  background-color: white;
+  color: black;
+  border-radius: 20px;
+}
+
+.form label {
+  text-align: left;
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid black;
+  box-sizing: border-box;
+  display: block;
+  resize: none;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  font-family: Oswald;
+  font-weight: 300;
+}
+
+input[type="text"],
+input[type="email"],
+textarea[type="text"] {
+  font-family: Oswald;
+  font-weight: 400;
+}
+
+.form input:focus,
+.form textarea:focus {
+  outline: none !important;
+  border: 1px solid #f1356d;
+}
+
+.form button {
+  background: #f1356d;
+  font-size: 14px;
+  color: whitesmoke;
+  padding: 8px 10px;
+  cursor: pointer;
+  border: 0;
+  font-family: Oswald;
+  font-weight: 600;
 }
