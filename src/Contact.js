@@ -11,7 +11,7 @@ function Contact() {
           <i
             className="fa fa-envelope"
             aria-hidden="true"
-            style={{ fontSize: "20px" }}
+            style={{ fontSize: "24px" }}
           ></i>
         </div>
         <div className="align-icons-text">
