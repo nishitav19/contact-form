@@ -14,8 +14,11 @@ client = MongoClient(
 mydb = client["support"]
 mycol = mydb["users"]
 
+JSONSchemaValidator(app=app, root="schemas")
+
 
 @app.route("/api/contact", methods=["POST"])
+@app.validate('users', 'query')
 def add_user():
     json = request.json
     name = json['name']

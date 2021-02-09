@@ -1,0 +1,11 @@
+{
+  "query": {
+    "type": "object",
+    "properties": {
+      "name": { "type": "string", "minLength": 1, "maxLength": 50 },
+      "email": { "type": "string", "format": "email" },
+      "message": { "type": "string", "minLength": 10, "maxLength": 500 }
+    },
+    "required": ["name", "email", "message"]
+  }
+}
