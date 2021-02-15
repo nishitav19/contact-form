@@ -1,6 +1,23 @@
 import React from "react";
+import { useState } from "react";
 
 function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleNameChange = (e) => {
+    setName((e.target.id = e.target.value));
+  };
+
+  const handleEmailChange = (e) => {
+    setEmail((e.target.id = e.target.value));
+  };
+
+  const handleMessageChange = (e) => {
+    setMessage((e.target.id = e.target.value));
+  };
+
   return (
     <div className="contact-form">
       <div className="align-header">
@@ -22,14 +39,31 @@ function Contact() {
         <div className="form">
           <form>
             <label>Name</label>
-            <input type="text" required placeholder="Sarah Jones" />
+            <input
+              type="text"
+              id="name"
+              required
+              placeholder="Sarah Jones"
+              value={name}
+              onChange={handleNameChange}
+            />
             <label>Email</label>
-            <input type="email" required placeholder="sarahjones@gmail.com" />
+            <input
+              type="email"
+              id="email"
+              required
+              placeholder="sarahjones@gmail.com"
+              value={email}
+              onChange={handleEmailChange}
+            />
             <label>Message</label>
             <textarea
               type="text"
+              id="message"
               required
               placeholder="Describe the message below."
+              value={message}
+              onChange={handleMessageChange}
             ></textarea>
             <button>Submit</button>
           </form>
