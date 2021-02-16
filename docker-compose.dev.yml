@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  api-server:
+    build:
+      context: ./api-server
+      dockerfile: Dockerfile.dev
+    container_name: server
+    image: contact-form/backend:dev
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./api-server/src:/src
+    tty: true
+
+  webapp:
+    build:
+      context: ./webapp
+      dockerfile: Dockerfile.dev
+    container_name: app
+    image: contact-form/frontend:dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./webapp:/app
+      - ./app/node_modules
+    tty: true
