@@ -26,13 +26,15 @@ function Contact() {
     })
       .then((response) => response.json())
       .then((result) => {
-        console.log("Success: ", result);
+        // console.log("Success: ", result);
         if (result.status === "success") {
           Swal.fire({
             title: "Thank you for contacting us.",
             showClass: "success",
             icon: "success",
             width: "30em",
+            iconColor: "green",
+            allowOutsideClick: false,
           });
           setState({
             name: "",
@@ -42,12 +44,13 @@ function Contact() {
         }
       })
       .catch((error) => {
-        console.error(error);
+        // console.error(error);
         Swal.fire({
           title: "Something went wrong!",
           html: "Please try again after sometime, thank you.",
           icon: "error",
           width: "30em",
+          allowOutsideClick: false,
         });
       });
   };
