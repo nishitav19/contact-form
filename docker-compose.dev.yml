@@ -6,11 +6,24 @@ services:
       dockerfile: Dockerfile.dev
     container_name: server
     image: contact-form/backend:dev
-    ports:
-      - "5000:5000"
+    # ports:
+    #   - "5000:5000"
     volumes:
       - ./api-server/src:/src
     tty: true
+
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile.dev
+    container_name: nginx
+    image: kai/nginx:dev
+    ports:
+      - "3050:80"
+    tty: true
+    depends_on:
+      - webapp
+      - api-server
 
   webapp:
     build:
@@ -18,8 +31,8 @@ services:
       dockerfile: Dockerfile.dev
     container_name: app
     image: contact-form/frontend:dev
-    ports:
-      - "3000:3000"
+    # ports:
+    #   - "3000:3000"
     volumes:
       - ./webapp:/app
       - ./app/node_modules
