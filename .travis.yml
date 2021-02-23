@@ -1,0 +1,14 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t nishitav19/react-test -f ./webapp/Dockerfile.dev ./webapp
+
+script:
+  - docker run nishitav19/react-test npm test -- --coverage
+
+after_success:
+  - docker build -t nishitav19/multi-webapp ./webapp
+  - docker build -t nishitav19/multi-nginx ./nginx
+  - docker build -t nishitav19/multi-api-server ./api-server
