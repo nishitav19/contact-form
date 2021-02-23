@@ -12,3 +12,9 @@ after_success:
   - docker build -t nishitav19/multi-webapp ./webapp
   - docker build -t nishitav19/multi-nginx ./nginx
   - docker build -t nishitav19/multi-api-server ./api-server
+  # Log in to the docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # Take those images and push them to docker hub
+  - docker push nishitav19/multi-webapp
+  - docker push nishitav19/multi-nginx
+  - docker push nishitav19/multi-api-server
