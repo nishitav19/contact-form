@@ -3,7 +3,7 @@ services:
   api-server:
     build:
       context: ./api-server
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
     container_name: server
     image: contact-form/backend:dev
     ports:
@@ -15,7 +15,7 @@ services:
   nginx:
     build:
       context: ./nginx
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
     container_name: nginx
     image: kai/nginx:dev
     ports:
@@ -28,7 +28,7 @@ services:
   webapp:
     build:
       context: ./webapp
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
     container_name: app
     image: contact-form/frontend:dev
     ports:
