@@ -5,13 +5,15 @@
             "name": "webapp",
             "image": "nishitav19/multi-webapp",
             "hostname": "webapp",
-            "essential": false
+            "essential": false,
+            "memory": 128
         },
         {
             "name": "api-server",
             "image":"nishitav19/multi-api-server",
             "hostname": "api-server",
-            "essential": false       
+            "essential": false,
+            "memory": 128      
         },
         {
             "name": "nginx",
@@ -24,7 +26,8 @@
                     "containerPort": 80
                 }
             ],
-            "links": ["webapp", "api-server"]
+            "links": ["webapp", "api-server"],
+            "memory": 128
         }
     ]
 }

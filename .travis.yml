@@ -1,4 +1,5 @@
 sudo: required
+language: "generic"
 services:
   - docker
 
@@ -19,3 +20,15 @@ after_success:
   - docker push nishitav19/multi-webapp
   - docker push nishitav19/multi-nginx
   - docker push nishitav19/multi-api-server
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "multi-docker"
+  env: "MultiDocker-env-1"
+  bucket_name: "elasticbeanstalk-us-east-1-381522444405"
+  bucket_path: "docker-multi"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
