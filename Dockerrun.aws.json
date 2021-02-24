@@ -1,0 +1,30 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "name": "webapp",
+            "image": "nishitav19/multi-webapp",
+            "hostname": "webapp",
+            "essential": false
+        },
+        {
+            "name": "api-server",
+            "image":"nishitav19/multi-api-server",
+            "hostname": "api-server",
+            "essential": false       
+        },
+        {
+            "name": "nginx",
+            "image": "nishitav19/multi-nginx",
+            "hostname": "nginx",
+            "essential": true,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort": 80
+                }
+            ],
+            "links": ["webapp", "api-server"]
+        }
+    ]
+}
