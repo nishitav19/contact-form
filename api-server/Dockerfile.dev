@@ -1,0 +1,8 @@
+FROM python:3.8.7
+WORKDIR /src
+ENV FLASK_APP=api.py
+ENV FLASK_RUN_HOST=0.0.0.0
+COPY ./src/requirements.txt /src/requirements.txt
+RUN pip install -r requirements.txt
+COPY ./src /src
+CMD ["flask", "run"]
