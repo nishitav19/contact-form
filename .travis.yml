@@ -20,13 +20,14 @@ after_success:
   - docker push nishitav19/multi-webapp
   - docker push nishitav19/multi-nginx
   - docker push nishitav19/multi-api-server
+
 # deploy:
 #   provider: elasticbeanstalk
 #   region: "us-east-1"
 #   app: "docker"
 #   env: "Docker-env"
 #   bucket_name: "elasticbeanstalk-us-east-1-381522444405"
-#   bucket_path: "docker-multi"
+#   bucket_path: "multi-docker"
 #   on:
 #     branch: master
 #   access_key_id: $AWS_ACCESS_KEY
